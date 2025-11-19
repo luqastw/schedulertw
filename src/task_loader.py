@@ -25,15 +25,16 @@ def load_tasks(path=TASK_FILE):
         path.parent.mkdir(exist_ok=True, parents=True)
 
         with path.open("w", encoding="utf-8") as f:
-            json.dump(template.model_dump(), f, indent=4, ensure_ascii=False)
+            json.dump([template.model_dump()], f, indent=4, ensure_ascii=False)
         
-        return template.model_dump()
+        return [template.model_dump()]
 
     with TASK_FILE.open("r", encoding="utf-8") as f:
-        tasks = json.load(f)
-        print("JSON loaded.")
+        data = json.load(f)
+         
+    tasks = [Task(**item) for item in data]
 
-    if not isinstance(tasks, dict):
+    if not isinstance(tasks, list):
         raise ValueError("The JSON file should have a dict of tasks.")
 
     return tasks
