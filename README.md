@@ -1,3 +1,3 @@
 # schedulertw
 
-- Agendamento e execução de tarefas em Python.
+⏰ Schedulertw is a Python program focused on scheduling and automating synchronous and asynchronous tasks.
