@@ -1,7 +1,0 @@
-{
-    "name": "Limpar casa",
-    "description": "Usar a vassoura da vovó",
-    "schedule": "Antes da mamãe chegar às 14:00",
-    "action": "Limpar()",
-    "enable": true
-}
